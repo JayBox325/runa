@@ -21,6 +21,7 @@
 **/sized/
 **/thumbs/
 **/_thumbs/
+**/cache
 
 # Project #
 **/yarn-error.log
@@ -39,3 +40,8 @@
 /_project/_public/.env
 /_project/_public/storage/*
 /_project/_public/public/resources/*
+
+# Next #
+.next/**
+.next
+out

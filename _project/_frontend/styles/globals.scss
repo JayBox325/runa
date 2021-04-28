@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+
+@import 'layout/container.scss';
+@import 'layout/row.scss';
+
+@import 'typography/base.scss';
+@import 'typography/headings.scss';
+
+// @import 'typography/*'

@@ -1,0 +1,20 @@
+.container {
+    @apply px-6 mx-auto;
+    max-width: 1400px;
+    
+    @screen md {
+        @apply px-8;
+    }
+    
+    @screen lg {
+        @apply px-10;
+    }
+    
+    @screen 2xl {
+        @apply px-0;
+    }
+
+    &--slim {
+        max-width: 900px;
+    }
+}

@@ -1,14 +1,33 @@
 {
     "name": "project",
-    "version": "1.0.0",
-    "main": "_gulp/gulpfile.babel.js",
+    "license": "MIT",
     "scripts": {
-        "watch": "gulp --env development",
-        "production": "gulp --env production",
-        "build": "gulp build --env development",
-        "package": "gulp build --env production"
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
     },
     "devDependencies": {
-        "gulp": "^4.0.0"
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/free-brands-svg-icons": "^5.15.3",
+        "@fortawesome/free-solid-svg-icons": "^5.15.3",
+        "@fortawesome/react-fontawesome": "^0.1.14",
+        "@heroicons/react": "^1.0.1",
+        "@types/react": "^17.0.4",
+        "@zeit/next-sass": "^1.0.1",
+        "add": "^2.0.6",
+        "autoprefixer": "^10.2.5",
+        "next": "^10.2.0",
+        "node-sass-glob-importer": "^5.3.2",
+        "postcss": "^8.2.13",
+        "postcss-import": "^14.0.1",
+        "postcss-preset-env": "^6.7.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "sass": "^1.32.11",
+        "tailwindcss": "^2.1.2",
+        "typescript": "^4.2.4",
+        "webpack": "^4.46.0",
+        "webpack-cli": "^4.6.0",
+        "webpack-dev-middleware": "^4.1.0"
     }
 }
