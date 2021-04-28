@@ -1,0 +1,128 @@
+h1, .title-1,
+h2, .title-2,
+h3, .title-3,
+h4, .title-4,
+h5, .title-5,
+h6, .title-6 {
+    @apply font-black font-display leading-none;
+}
+
+h1, .title-1 {
+    @apply text-3xl;
+
+    @screen sm {
+        @apply text-4xl;
+    }
+
+    @screen md {
+        @apply text-5xl;
+    }
+
+    @screen lg {
+        @apply text-6xl;
+    }
+
+    @screen xl {
+        @apply text-7xl;
+    }
+
+    @screen 2xl {
+        @apply text-8xl;
+    }
+}
+
+h2, .title-2 {
+    @apply text-2xl;
+
+    @screen sm {
+        @apply text-2xl;
+    }
+
+    @screen md {
+        @apply text-3xl;
+    }
+
+    @screen lg {
+        @apply text-4xl;
+    }
+
+    @screen xl {
+        @apply text-5xl;
+    }
+
+    @screen 2xl {
+        @apply text-6xl;
+    }
+}
+
+h3, .title-3 {
+    @apply text-xl;
+
+    @screen sm {
+        @apply text-xl;
+    }
+
+    @screen md {
+        @apply text-2xl;
+    }
+
+    @screen lg {
+        @apply text-3xl;
+    }
+
+    @screen xl {
+        @apply text-4xl;
+    }
+
+    @screen 2xl {
+        @apply text-5xl;
+    }
+}
+
+h4, .title-4 {
+    @apply text-lg;
+
+    @screen sm {
+        @apply text-lg;
+    }
+
+    @screen md {
+        @apply text-xl;
+    }
+
+    @screen lg {
+        @apply text-2xl;
+    }
+
+    @screen xl {
+        @apply text-3xl;
+    }
+
+    @screen 2xl {
+        @apply text-3xl;
+    }
+}
+
+h6, .title-6 {
+    @apply text-lg;
+
+    @screen sm {
+        @apply text-lg;
+    }
+
+    @screen md {
+        @apply text-xl;
+    }
+
+    @screen lg {
+        @apply text-xl;
+    }
+
+    @screen xl {
+        @apply text-2xl;
+    }
+
+    @screen 2xl {
+        @apply text-2xl;
+    }
+}
