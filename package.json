@@ -2,6 +2,7 @@
     "name": "runa",
     "version": "1.0.0",
     "main": "runa.js",
+    "license": "MIT",
     "bin": {
         "runa": "runa.js"
     },

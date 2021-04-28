@@ -1,0 +1,14 @@
+{
+    "name": "project",
+    "version": "1.0.0",
+    "main": "_gulp/gulpfile.babel.js",
+    "scripts": {
+        "watch": "gulp --env development",
+        "production": "gulp --env production",
+        "build": "gulp build --env development",
+        "package": "gulp build --env production"
+    },
+    "devDependencies": {
+        "gulp": "^4.0.0"
+    }
+}

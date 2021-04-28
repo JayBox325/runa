@@ -9,15 +9,23 @@ switch (args[0]) {
 
     case 'install':
     case 'i':
-        console.log('🦴 Runa is fetching your dependencies')
-        run('npm', ['install', '--prefix']);
+        console.log(chalk.yellow('🦴 Runa is fetching your dependencies'))
+        run('npm', ['install', '--prefix', '_project/_frontend'])
+        break
+
+    case 'watch':
+    case 'dev':
+    case 'wait':
+        console.log(chalk.yellow('👀 Runa is watching and waiting for commands...'))
+        run('npm', ['run', 'watch', '--prefix', '_project/_frontend'])
         break
 
     default:
         console.log(
             chalk.yellow(
                 figlet.textSync('Runa', { horizontalLayout: 'full' })
-            )
+            ),
+            '\nRuna is a framework lorem ipsum set amet.\n'
         )
         break
 }
