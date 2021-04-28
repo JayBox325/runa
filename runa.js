@@ -14,7 +14,7 @@ switch (args[0]) {
             console.log(chalk.yellow('🦴 Runa is fetching your dependencies and installing them.'))
             run('npm', ['install', '--prefix', '_project/_frontend'])
         } else if (process.argv.length == 4) {
-            installNewPkg(process.argv[3])
+            installNewPkg(process.argv.slice(3))
         }
         break
 
@@ -22,13 +22,17 @@ switch (args[0]) {
     case 'dev':
     case 'wait':
         console.log(chalk.yellow('👀 Runa is watching and waiting for commands...'))
-        run('npm', ['run', 'watch', '--prefix', '_project/_frontend'])
+        run('npm', ['run', 'dev', '--prefix', '_project/_frontend'])
+        break
+
+    case 'start':
+        console.log(chalk.yellow('👀 Runa is starting the NextJS server'))
+        run('npm', ['run', 'start', '--prefix', '_project/_frontend'])
         break
 
     case 'add':
     case 'fetch':
-        console.log(chalk.yellow(`🦴 Runa is fetching ${process.argv[3]} and installing it!`))
-        run('npm', ['i','-D',process.argv[3],'--prefix','_project/_frontend'])
+        installNewPkg(process.argv.slice(3))
         break
 
     default:
@@ -45,7 +49,10 @@ function run(cmd, args) {
     return spawnSync(cmd, args, { stdio: 'inherit' })
 }
 
-function installNewPkg(pkg) {
-    console.log(chalk.yellow(`Runa is adding ${pkg}`))
-    run('npm', ['i','-D',pkg,'--prefix','_project/_frontend'])
+function installNewPkg(pkgs) {
+    let command = ['i','-D','--prefix','_project/_frontend']
+    command.splice.apply(command, [2,0].concat(pkgs))
+
+    console.log(chalk.yellow(`Runa is fetching and installing ${pkgs.join(', ').replace(/, ([^,]*)$/, ' and $1')}.`))
+    run('npm', command)
 }
