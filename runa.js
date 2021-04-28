@@ -9,8 +9,13 @@ switch (args[0]) {
 
     case 'install':
     case 'i':
-        console.log(chalk.yellow('🦴 Runa is fetching your dependencies'))
-        run('npm', ['install', '--prefix', '_project/_frontend'])
+    case 'ok':
+        if (process.argv.length == 3) {
+            console.log(chalk.yellow('🦴 Runa is fetching your dependencies and installing them.'))
+            run('npm', ['install', '--prefix', '_project/_frontend'])
+        } else if (process.argv.length == 4) {
+            installNewPkg(process.argv[3])
+        }
         break
 
     case 'watch':
@@ -18,6 +23,12 @@ switch (args[0]) {
     case 'wait':
         console.log(chalk.yellow('👀 Runa is watching and waiting for commands...'))
         run('npm', ['run', 'watch', '--prefix', '_project/_frontend'])
+        break
+
+    case 'add':
+    case 'fetch':
+        console.log(chalk.yellow(`🦴 Runa is fetching ${process.argv[3]} and installing it!`))
+        run('npm', ['i','-D',process.argv[3],'--prefix','_project/_frontend'])
         break
 
     default:
@@ -32,4 +43,9 @@ switch (args[0]) {
 
 function run(cmd, args) {
     return spawnSync(cmd, args, { stdio: 'inherit' })
+}
+
+function installNewPkg(pkg) {
+    console.log(chalk.yellow(`Runa is adding ${pkg}`))
+    run('npm', ['i','-D',pkg,'--prefix','_project/_frontend'])
 }
