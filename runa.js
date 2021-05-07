@@ -40,7 +40,16 @@ switch (args[0]) {
             chalk.yellow(
                 figlet.textSync('Runa', { horizontalLayout: 'full' })
             ),
-            '\nRuna is a framework lorem ipsum set amet.\n'
+            '\nRuna is a framework lorem ipsum set amet.\n',
+
+            chalk.yellow('\ninstall'),
+            '\t\t\t',
+            'This installs stuff',
+
+            chalk.yellow('\ncheese'),
+            '\t\t\t\t',
+            'This installs stuff'
+
         )
         break
 }
